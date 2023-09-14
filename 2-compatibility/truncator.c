@@ -52,7 +52,7 @@ int main() {
     }
 
 
-    printf("%s%d\n", "Total lines over 50 char: ", cl);
+    printf("%s%d\n", "Total lines over 50 chars: ", cl);
     printf("%s", "Offending lines: ");
     for(int i = 0; i < no; i++) {
         printf(" %d,", noffenders[i]);
