@@ -9,41 +9,41 @@
 
 int main() {
 
-    int c, nc, nl, no, cl, in;
+    int c, numchars, numlines, numoff, cl, in;
     int noffenders[100];  
     
     c = getchar();
-    nc = 0;
-    nl = 0;
-    no = 0;
+    numchars = 0;
+    numlines = 0;
+    numoff = 0;
     cl = 0;
     in = OUT;
 
     while (c != EOF) {
         if (c == '\n') {
-            nc = 0;
-            nl++;
+            numchars = 0;
+            numlines++;
             in = OUT;
             putchar(c);
             c = getchar();
             }
         else {
-            if (nc >= 50) {
+            if (numchars >= 50) {
                 if (in == OUT) {
                     putchar('\n');
-                    noffenders[no] += nl;
-                    no++;
+                    noffenders[numoff] += numlines;
+                    numoff++;
                     cl++;
-                    nc = 0;
+                    numchars = 0;
                     in = IN;}
                 else {
                     putchar('\n');
-                    nc = 0;
+                    numchars = 0;
                     in = IN;
                     }
                 }
             else {
-                nc++;
+                numchars++;
                 putchar(c);
                 c = getchar();
                 }
@@ -51,10 +51,10 @@ int main() {
     
     }
 
-
+    printf("\n");
     printf("%s%d\n", "Total lines over 50 chars: ", cl);
     printf("%s", "Offending lines: ");
-    for(int i = 0; i < no; i++) {
+    for(int i = 0; i < numoff; i++) {
         printf(" %d,", noffenders[i]);
     }
     printf("\n"); 
