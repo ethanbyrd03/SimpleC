@@ -1,5 +1,5 @@
 // 730481481
-// I pledge the COMP 211 Honor Code
+// I pledge the COMP 211 honor code.
 
 # include <stdio.h>
 # include <stdlib.h>
